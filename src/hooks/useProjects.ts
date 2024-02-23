@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
 import {Project} from "../types";
-import {projectsMock} from "../mocks/projects-mock.ts";
+import {getProjects} from "../services/Projects.ts";
 
 export function useProjects(){
     const [projects, setProjects] = useState([] as Project[])
 
     useEffect(() => {
-        setProjects(projectsMock)
+        getProjects().then(result => setProjects(result))
     }, [])
 
     return {projects}

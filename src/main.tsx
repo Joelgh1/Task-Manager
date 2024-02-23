@@ -2,9 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import './index.css'
-import {Root} from "./components/Root.tsx";
-import {HomePage} from "./components/HomePage.tsx";
-import {ProjectsFeed} from "./components/ProjectsFeed.tsx";
+import {Root} from "./components/commons/Root.tsx";
+import {HomePage} from "./components/commons/HomePage.tsx";
+import {ProjectsFeed} from "./components/feed/ProjectsFeed.tsx";
+import {ProjectDetail} from "./components/detail/ProjectDetail.tsx";
+import {loader as projectLoader} from "./components/detail/ProjectDetail.tsx";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +20,11 @@ const router = createBrowserRouter([
             {
                 path: "/projects",
                 element: <ProjectsFeed/>
+            },
+            {
+                path: "/projects/:projectId",
+                element: <ProjectDetail/>,
+                loader: projectLoader
             }
         ]
     }

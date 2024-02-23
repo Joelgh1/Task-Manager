@@ -1,4 +1,5 @@
-import {Project} from "../types";
+import {Project} from "../../types";
+import {Link} from "react-router-dom";
 
 interface Props {
     feed: Project[]
@@ -14,8 +15,10 @@ export function Projects(props: Props) {
                             {
                                 props.feed.map(project => {
                                     return (
-                                        <li key={project.title}>
-                                            <h2>{project.title}</h2>
+                                        <li key={project.id}>
+                                            <Link to={`/projects/${project.id}`} className="project-link">
+                                                <h2>{project.title}</h2>
+                                            </Link>
                                         </li>
                                     )
                                 })

@@ -1,5 +1,6 @@
 
 interface Project{
+    id: number,
     title: string,
     taskList: Task[]
 }

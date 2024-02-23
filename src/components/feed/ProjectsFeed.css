@@ -33,6 +33,13 @@ li{
     text-align: center;
     background-color: #333333;
     border-radius: 10px;
+    transition-property: background-color;
+    transition-duration: 200ms;
+}
+
+.project-link{
+    text-decoration: none;
+    color: white;
 }
 
 li:hover{

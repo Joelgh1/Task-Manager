@@ -1,7 +1,7 @@
-import {Header} from "./Header.tsx";
-import {Footer} from "./Footer.tsx";
+import {Header} from "../commons/Header.tsx";
+import {Footer} from "../commons/Footer.tsx";
 import "./ProjectsFeed.css"
-import {useProjects} from "../hooks/useProjects.ts";
+import {useProjects} from "../../hooks/useProjects.ts";
 import {Projects} from "./Projects.tsx";
 
 export function ProjectsFeed() {
